@@ -1,16 +1,16 @@
 AUXX = $(addprefix build/, main.toc main.aux)
 SECS := $(wildcard secs/*.tex)
 
-all: ECA.pdf
+all: PSaAV.pdf
 
-ECA.pdf: $(AUXX) main.tex $(SECS) mstyle.sty
+PSaAV.pdf: $(AUXX) main.tex $(SECS) mstyle.sty
 	cp $(AUXX) .
 	pdflatex main.tex
 	mv *.toc build
 	mv *.aux build
 	mv *.log build
 	mv *.out build
-	mv main.pdf ECA.pdf
+	mv main.pdf PSaAV.pdf
 
 $(AUXX): main.tex $(SECS)
 	pdflatex main.tex

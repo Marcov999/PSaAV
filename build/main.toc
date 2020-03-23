@@ -1,11 +1,8 @@
 \select@language {italian}
 \select@language {italian}
 \contentsline {section}{\numberline {1}Introduzione}{3}{section.1}
-\contentsline {section}{\numberline {2}Funzioni olomorfe in una variabile}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Notazioni e prerequisiti}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Risultati preliminari}{6}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Teoremi di Hurwitz}{13}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}La sfera di Riemann}{14}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Il disco unitario}{18}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Dinamica del disco e del semipiano superiore}{21}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}Germi e prolungamenti analitici}{25}{subsection.2.7}
+\contentsline {section}{\numberline {2}Teoria dei numeri}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}N1}{4}{subsection.2.1}
+\contentsline {section}{\numberline {3}Combinatoria}{7}{section.3}
+\contentsline {section}{\numberline {4}Algebra}{8}{section.4}
+\contentsline {section}{\numberline {5}Geometria}{9}{section.5}

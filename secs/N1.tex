@@ -1,0 +1,72 @@
+\begin{prob}
+  Determinare tutti i numeri primi $p$ per i quali esistono interi $m, n$ tali che $p=m^2+n^2, p \mid m^3+n^3-4$.
+\end{prob}
+
+\begin{sol}
+  Premessa: sto scrivendo questa soluzione a mente fredda e problema già risolto, ma un amico mi aveva chiesto di aiutarlo quindi tra messaggi e appunti dovrei riuscire a ricostruire il flusso di pensieri. \\
+  Ok, il problema mi sembra di averlo già visto, è uno dei tanti che so come si fanno ma non so fare. La prima cosa che mi viene in mente è che conosciamo tutti i numeri primi che soddisfano la prima equazione, sono quelli della forma $4k+1$, ma a giudicare dai cubi nell'altra espressione, né questo né i primi di Gauss ci potranno aiutare - dopotutto è teoria piuttosto avanzata. \\
+  Ok, quello che vogliamo è diminuire il grado di $m^3+n^3-4$. Proviamo con un po' di congruenze modulo $p$, otteniamo $(m+n)mn+4 \equiv 0$, resta comunque di grado 3... però nelle singole è di grado 2, chissà se forse Vieta Jumping... Ma no, che mi dice il cervello! Sono troppo incasinate, e poi si perderebbe l'informazione sul primo. \\
+  Facciamo una cosa a caso: proviamo a elevare $(m+n)mn+4$ al quadrato. Viene \\
+  $(m+n)^2m^2n^2+8(m+n)mn+16 \equiv 0$ \\
+  $2m^3n^3+8((m+n)mn+4)-16 \equiv 0$ \\
+  $m^3n^3 \equiv 8$ (sto escludendo il caso $p=2$ che si fa a mano). \\
+  Proviamo a scomporlo: $(mn-2)(m^2n^2+2mn+4) \equiv 0$... no, non mi dice niente. \\
+  La prima pazzia ha portato a qualcosa, chissà se... ma sì, eleviamo anche al cubo:
+  $(m+n)^3+3\cdot 4(m+n)^2m^2n^2+3 \cdot 16 (m+n)mn +64 \equiv 0$ \\
+  $8(m+n)^3+12((m+n)^2m^2n^2+8(m+n)mn+16)-48(m+n)mn-128 \equiv 0$ \\
+  $8(m+n)^3-48((m+n)mn+4)+64 \equiv 0$ \\
+  (di nuovo $p \not = 2$) \\
+  $(m+n)^3+8 \equiv 0$ \\
+  $m^3+n^3+3(m^2+n^2)+8 \equiv 0 \Rightarrow 12 \equiv 0$. \\
+  Inaspettatamente semplice. Rifacciamo i conti per sicurezza (i non stupidi come me fra di voi se ne saranno accorti da un pezzo). Non so più elevare al cubo... \\
+  $m^3+n^3+3mn(m+n)+8 \equiv 0$ \\
+  $4+3mn(m+n)+8 \equiv 0$ \\
+  $3[mn(m+n)+4] \equiv 0$. Ah. \\
+  Ok, ripassiamo il manuale. Passo 1: sporcarsi le mani. \\
+  Almeno dobbiamo controllare solo la metà dei casi. \\
+  $2=1^2+1^2$, avoja. \\
+  $5=2^2+1^2, 2^3+1^3-4=5$, bene. \\
+  $13=3^2+2^2, 3^3+2^3-4=31$. \\
+  $17=4^2+1^2, 4^3+1^3-4=61$. \\
+  $29=5^2+2^2, 5^3+2^3-4=129$. \\
+  Ok. Da dove ricomincio? $m^3n^3 \equiv 8$ sembra un buon risultato. \\
+  $(mn-2)(m^2n^2+2mn+4) \equiv 0$. Adesso lo vedo! \\
+  $2mn+4=(m+n)mn+4-(m+n-2)mn$. Allora: \\
+  $(mn-2)(m^2n^2-(m+n-2)mn) \equiv 0$. Ovviamente $p \nmid mn$, quindi: \\
+  $(mn-2)(mn-m-n+2) \equiv 0$. \\
+  Bello, mi piace. Primo caso: $mn \equiv 2$. Ricordando $(m+n)mn+4 \equiv 0$ e $p \not =2$, otteniamo $m+n \equiv -2$, cioè ad esempio $m \equiv -(n+2)$. Con i cubi:
+  $-(n+2)^3+n^3-4 \equiv 0$ \\
+  $6n^2+12n+4 \equiv 0$ \\
+  $3n^2+6n+2 \equiv 0$. Con i quadrati: \\
+  $(n+2)^2+n^2=2n^2+4n+4 \equiv 0, p \not =2 \Rightarrow n^2+2n+2 \equiv 0$. \\
+  Sottraggo 3 di questa da quella prima e ottengo $-4 \equiv 0$, bene, non ci sono soluzioni. \\
+  Secondo caso: $mn \equiv m+n-2$, cioè $m+n \equiv mn+2$. \\
+  Allora $0 \equiv (m+n)mn+4 \equiv m^2n^2+2mn+4$. Mh, no? \\
+  $0 \equiv (m+n)mn+4 \equiv (m+n)(m+n-2)+4$ \\
+  $(m+n)^2-2(m+n)+4 \equiv 0$ \\
+  $2mn-2(m+n)+4 \equiv 0$ \\
+  $mn-m-n+2 \equiv 0$. No. Cioè, sì, ma già lo sapevo. Proviamo con $m^3n^3 \equiv 8$. \\
+  $(m+n-2)^3 \equiv 8$ \\
+  $(m+n)^3-6(m+n)^2+12(m+n)-8 \equiv 8$ \\
+  $m^3+n^3+3mn(m+n)-12mn+12(m+n)-8 \equiv 8$ \\
+  $4-12-12mn+12(m+n)-8 \equiv 8$ \\
+  $12(m+n-mn) \equiv 24 \Rightarrow m+n-mn-2 \equiv 0$ (ho diviso anche per 3 perché 3 non può essere). Ma ancora nulla. Rivediamo il caso prima... Ehi! $p=5$ dovrebbe rientrarci! Ah, ho di nuovo sbagliato i conti... vediamo: \\
+  $n^2+2n+2 \equiv 0$ è giusto. \\
+  $-(n+2)^3+n^3-4 \equiv 0$ \\
+  $6n^2+12n+12 \equiv 0$ (3 non può essere, ricordiamo) \\
+  $n^2+2n+2 \equiv 0$. Sebbene non sia di facile risoluzione, spendiamo una parola su quest'equazione di secondo grado coi moduli. A cose normali verrebbe $n=-1 \pm \sqrt{-1}$ e sappiamo che questa ha soluzione anche modulo $p$ perché $p=m^2+n^2 \Rightarrow p=4k+1 \Rightarrow i^2 \equiv 1$ ha soluzione modulo $p$, quindi viene $n \equiv -1 \pm i$. Peccato che se sostituiamo viene $m \equiv -1 \mp i$ e in qualunque equazione li si metta viene l'identità $0 \equiv 0$. Se fosse stato $n \equiv i$ avremmo avuto $m \equiv \pm 1$, che limitava i valori di $m$: a parte casi piccoli di $p$ fatti a mano, avremmo ottenuto $m^2>p$ a parte per $m= \pm 1$, che si possono fare a mano con $n$ incognito. Peccato. \\
+  Ok, ricapitoliamo. $p=m^2+n^2, p \mid m^3+n^3-4$. Ottengo $(m+n)mn+4 \equiv 0$ da cui $m^3n^3 \equiv 8$. Rimaneggiando questa ho $(mn-2)(mn-m-n+2) \equiv 0$. \\
+  \textit{Le parole di darkcrystal rimbombano: "\textbf{Principio fondamentale:} ogni problema di teoria dei numeri (serio) ha una parte di congruenze e una parte di disuguaglianze."} (sì, sono andato a cercare la citazione esatta). \\
+  Era a questo che mi riferivo quando parlavo di abbassare il grado: per fare le disuguaglianze. Ora che ci sono riuscito, perché mettermi a girare in tondo? \\
+  Però, attenzione: il testo dice interi, non interi positivi/non negativi! Ma allora devo rifare i casi a mano... \\
+  $13=(-3)^2+(-2)^2, (-3)^3+(-2)^3-4=-39$. Aha! Eccone un altro! Provando a mente $17$ sembra che non venga... speriamo! Però le disuguaglianze tocca guardarle coi valori assoluti. \\
+  Primo caso: $m^2+n^2 \mid mn-2 \Rightarrow m^2+n^2 \le |mn-2|$. \\
+  $|mn| \le (m^2+n^2)/2 \le |mn-2|/2$ (AM-GM) \\
+  $2|mn| \le |mn-2| \le |mn|+2$ (disuguaglianza triangolare) \\
+  $|mn| \le 2$. Si fa abbastanza a mano, non scordiamo che $mn=2$, se non fosse rientrato nella disuguaglianza, andava fatto a parte. Qui direi che abbiamo fatto. \\
+  Secondo caso: con passaggi analoghi si ottiene (tenendosi larghi) \\
+  $|mn| \le |m|+|n|+2$. \\
+  Ok, basta trovare gli interi positivi per cui vale e poi fare tutte le prove a mano con i segni (che gran divertimento). Se $m \ge n \ge 3$ si ottiene \\
+  $mn \ge 3m \ge m+n+3>m+n+2$, nessuna soluzione. Però negli altri casi? Se $n=2$ viene $2m \le m+4 \Rightarrow m \le 4$ (Yeee! $p=13$ rientra in questi casi!). Ma se $n=1$? $m \le m+3$, che è sempre vero. Ma poi, piccola nota a margine, è ancora una congettura l'esistenza di infiniti primi della forma $m^2+1$, che ne so io di 'sta roba? Ne so, solo che sono stupido: se $n=1$ viene $m^2+1 \mid m^3-3$ (o, nel caso di negativi $m^3-5$). Questa altro che da manuale, è proprio da esercizio da libro di testo - non la faccio, ma è necessaria per risolvere il problema. Per chi non lo sa, con una variabile sola si riesce sempre ad abbassare il grado tramite divisibilità. \\
+  Non ci scordiamo dell'eventualità $mn-m-n+2=0$. Anche questo è un esercizio da libro di testo: diventa $(m-1)(n-1)=-1$. Il lettore è invitato a portare a termine i conti.
+\end{sol}
