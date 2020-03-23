@@ -1,8 +1,0 @@
-\select@language {italian}
-\select@language {italian}
-\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}
-\contentsline {section}{\numberline {2}Teoria dei numeri}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}N1}{4}{subsection.2.1}
-\contentsline {section}{\numberline {3}Combinatoria}{7}{section.3}
-\contentsline {section}{\numberline {4}Algebra}{8}{section.4}
-\contentsline {section}{\numberline {5}Geometria}{9}{section.5}
