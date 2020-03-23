@@ -1,0 +1,88 @@
+\begin{defn}
+  Sia $\gamma:[0, 1] \longrightarrow \mathbb{C}$ un cammino continuo.
+  Se esistono $0=t_0<t_1<\dots<t_r=1$, intorni $U_0, \dots, U_j, \dots, U_r$ di $\gamma(t_j)$ e $f_j:U_j \longrightarrow \mathbb{C}$ olomorfe t.c. $f_j\restrict{U_j \cap U_{j+1}} \equiv f_{j+1}\restrict{U_j \cap U_{j+1}}$ diremo che \textsc{$f_0$ si prolunga olomorficamente lungo $\gamma$}.
+\end{defn}
+
+\begin{ex}
+  $\gamma(t)=e^{2\pi i t}, \gamma(0)=\gamma(1)=1$. $z=|z|e^{2\pi i \theta}, \theta \in \mathbb{R}$. $U_0=D(1, 1/2), f_0:U_0: \longrightarrow \mathbb{C}, f_0(z)=z^{1/2}=|z|^{1/2}e^{2\pi i(\theta/2)}$ ($\theta \in (-\pi, \pi)$).
+  $f_0 \in \mathcal{O}(U_0)$. È possibile prolungare olomorficamente $f_0$ lungo $\gamma$ con $f(\gamma(t))=e^{2\pi i(t/2)}$ $\implies$ $f(\gamma(1))=e^{2\pi i/2}=e^{\pi i}=-1$. $f(\gamma(0))=1$.
+\end{ex}
+
+\begin{defn}
+  Sia $a \in \mathbb{C}$ e consideriamo le coppie $(U, f)$ dove $U \subseteq \mathbb{C}$ è un intorno aperto di $a$ e $f \in \mathcal{O}(U)$. Definiamo la seguente relazione di equivalenza: $(U, f) \sim (V, g)$ se esiste $W \subseteq U \cap V$ intorno aperto di $a$ t.c. $f\restrict{W}=g\restrict{W}$. \\
+  $\mathcal{O}_a:=\faktor{\{(U, f)\}}{\sim}$ è detta \textsc{spiga dei germi di funzioni olomorfe in $a$}. \\
+  $\underline{f_a} \in \mathcal{O}_a$ si dice \textsc{germe} di funzione olomorfa. \\
+  $(U,f) \in \underline{f_a}$ si dice \textsc{rappresentante} di $\underline{f_a}$. \\
+  $\displaystyle \mathcal{O}:=\bigcup_{a \in \mathbb{C}} \mathcal{O}_a$ si dice \textsc{fascio dei germi} di funzioni olomorfe. \\
+  Dato $\Omega \subseteq \mathbb{C}$ aperto, definiamo anche $\displaystyle \mathcal{O}_{\Omega}:=\bigcup_{a \in \Omega} \mathcal{O}_a$.
+\end{defn}
+
+\begin{exc}
+  $\sim$ appena definita è una relazione di equivalenza.
+\end{exc}
+
+\begin{exc}
+  $\mathcal{O}_a$ è una $\mathbb{C}$-algebra ($\underline{f_a}+\underline{g}_a$ è il germe rappresentato da $(U \cap V, (f+g)\restrict{U \cap V})$ dove $(U,f) \in \underline{f_a}$ e $(V, g) \in \underline{g}_a$).
+\end{exc}
+
+\begin{oss}
+  Possiamo definire per ogni $k \ge 0$ $\underline{f_a}^{(k)}(a) \in \mathbb{C}$ ponendo $\underline{f_a}^{(k)}(a)=f^{(k)}(a)$ con $(U, f) \in \underline{f_a}$.
+\end{oss}
+
+\begin{defn}
+  $p: \mathcal{O} \longrightarrow \mathbb{C}$ con $p(\mathcal{O}_a)=\{a\}$. Vogliamo rendere $p$ "quasi" un rivestimento (vedremo che, per i soliti esempio stupidi, non può essere un rivestimento).
+\end{defn}
+
+Vogliamo definire una topologia su $\mathcal{O}$. Definiamo un sistema fondamentale di intorni.
+
+\begin{defn}
+  Gli intorni del sistema fondamentale sono i seguenti: dati $U \subseteq \mathbb{C}$ aperto, $f \in \mathcal{O}(U)$ l'intorno associato è $N(U, f)=\{\underline{f_z} \mid z \in U, (U, f) \in \underline{f_z}\}$.
+\end{defn}
+
+\begin{exc}
+  Esiste un'unica topologia su $\mathcal{O}$ t.c. $\{N(U, f)\}$ siano un sistema fondamentale di intorni.
+\end{exc}
+
+\begin{oss}
+  $p\restrict{N(U, f)}:N(U, f) \longrightarrow U$ è una bigezione.
+\end{oss}
+
+\begin{prop}
+  $\mathcal{O}$ è uno spazio di Hausdorff.
+\end{prop}
+
+\begin{proof}
+  Siano $\underline{f_a} \not \underline{g_b}$. Se $a \not= b$, esistono $(U, f) \in \underline{f_a}, (V, g) \in \underline{g_b}$ con $U \cap V=\emptyset$ $\implies$ $N(U, f) \cap N(V, g)=\emptyset$.
+  Se $a=b$, siano $(U, f) \in \underline{f_a}, (V, g) \in \underline{g_a}$, $D \subset U \cap V$ disco aperto di centro $a$. Vogliamo $N(D, f) \cap N(D, g)=\emptyset$.
+  Per assurdo, sia $\underline{h}_z \in N(D, f) \cap N(D, g)$ $\implies$ $z \in D$ e $\underline{h_z}=\underline{f_z}$ e $\underline{h_z}=\underline{g_z}$ $\implies$ $\underline{f_z}=\underline{g_z}$ $\implies$ esiste un aperto $W \subseteq D$ intorno di $z$ t.c. $f\restrict{W}=g\restrict{W}$ e per il principio di identità si avrebbe $f \equiv g$ su $D$ $\implies$ $\underline{f_a}=\underline{g_a}$, assurdo.
+\end{proof}
+
+\begin{prop}
+  $p: \mathcal{O} \longrightarrow \mathbb{C}$ è continua, aperta e omeomorfismo locale.
+\end{prop}
+
+\begin{proof}
+  Sia $V \subseteq \mathbb{C}$, $\displaystyle p^{-1}(V)=\bigcup\{N(W, f) \mid W \subseteq V \text{ aperto}, f \in \mathcal{O}(W)\}$ è aperto. $p(N(U, f))=U$ $\implies$ $p$ è aperta.
+  $p\restrict{N(U, f)}$ è invertibile: $p^{-1}(z)=\underline{f_z}$ $\implies$ $p\restrict{N(U, f)}$ è un omeomorfismo $\implies$ $p$ è un omeomorfismo locale.
+\end{proof}
+
+\begin{defn}
+  Una \textit{sezione} di $\mathcal{O}$ su un $\Omega \subset \mathbb{C}$ aperto è una $\underline{f}:\Omega \longrightarrow \mathcal{O}$ continua t.c. $p \circ \underline{f}=\id_{\Omega}$, cioè $\underline{f}(z) \in \mathcal{O}_z$ per ogni $z \in \Omega$.
+\end{defn}
+
+\begin{exc}
+  L'insieme delle sezioni di $\mathcal{O}$ su $\Omega$ è in corrispondenza biunivoca con lo spazio $\mathcal{O}(\Omega)$ delle funzioni olomorfe su $\Omega$.
+\end{exc}
+
+\begin{defn}
+  Siano $a \in \mathbb{C}, \underline{f_a} \in \mathcal{O}_a$. Sia $\gamma:[0, 1] \longrightarrow \mathbb{C}$ una curva continua con $\gamma(0)=a$.
+  Un \textsc{prolungamento analitico di $\underline{f_a}$ lungo $\gamma$} è un sollevamento $\tilde{\gamma}:[0, 1] \longrightarrow \mathcal{O}$ di $\gamma$ (cioè $p \circ \tilde{\gamma}=\gamma$) t.c. $\tilde{\gamma}(0)=\underline{f_a}$.
+\end{defn}
+
+\begin{oss}
+  $p$ non è un rivestimento perché non tutte le curve possono essere sollevate. Vediamo un esempio.
+\end{oss}
+
+\begin{ex}
+  $a=1, \underline{f_a}=(\mathbb{C}^*, 1/z), \gamma(t)=1-t$. Non esiste alcun sollevamento di $\gamma$ che parte da $\underline{f_a}$.
+\end{ex}

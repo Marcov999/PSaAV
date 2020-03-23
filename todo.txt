@@ -1,0 +1,12 @@
+Lez 01: ok
+Lez 02: ok
+Lez 03: ok
+Lez 04: ok
+Lez 05: ok
+Lez 06: ok
+Lez 07: ok
+Lez 08: aggiornare appena aggiunge la voce al registro
+
+Controllare nel video quella cosa sulla difficoltà dell'esercizio
+
+Scrivere un README decente

@@ -1,0 +1,113 @@
+Notazioni: $z=x+iy \in \mathbb{C}$ indica un numero complesso, $\bar{z}=x-iy$ il suo complesso coniugato. Con il termine \textit{dominio} si intende un aperto connesso. $\mathcal{O}(\Omega)=\{f: \Omega \longrightarrow \mathbb{C} | f \text{ è olomorfa} \}$.
+$\text{Hol}(\Omega_1, \Omega_2)=\{f: \Omega_1 \longrightarrow \Omega_2 | f \text{ è olomorfa} \}$.
+$\dfrac{\partial}{\partial z}=\dfrac{1}{2}\left(\dfrac{\partial}{\partial x}-i\dfrac{\partial}{\partial y}\right), \dfrac{\partial}{\partial \bar{z}}=\dfrac{1}{2}\left(\dfrac{\partial}{\partial x}+i\dfrac{\partial}{\partial y}\right)$. \\
+$\diff z=\diff x+i\diff y, \diff\bar{z}=\diff x-i\diff y, \diff z\left(\dfrac{\partial}{\partial z}\right)=1, \diff z\left(\dfrac{\partial}{\partial \bar{z}}\right)=0$. \\
+
+Daremo ora una definizione di funzione olomorfa basata su quattro definizioni, l'equivalenza delle quali è un prerequisito del corso e dovrebbe essere quindi nota agli studenti.
+
+\begin{defn}
+  Sia $\Omega \subseteq \mathbb{C}$ un aperto, $f: \Omega \in \mathbb{C}$ si dice \textsc{olomorfa} se vale una delle seguenti condizioni equivalenti:
+  \begin{nlist}
+      \item $f$ è \textit{$\mathbb{C}$-differenziabile}, cioè per ogni $a \in \Omega$ esiste $\displaystyle f'(a)=\lim_{z \longrightarrow a}=\frac{f(z)-f(a)}{z-a}$;
+      \item $f$ è \textit{analitica}, cioè per ogni $a \in \Omega$ esiste $U \subseteq \Omega$ aperto e intorno di $a$ e $\{c_n\}\subset \mathbb{C}$ t.c. per ogni $z \in U$ $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$;
+      \item $f$ è \textit{olomorfa}, cioè $f$ è continua, $\partial f/\partial x$ e $\partial f/\partial y$ esistono su $\Omega$ e $\dfrac{\partial f}{\partial x}+i\dfrac{\partial f}{\partial y} \equiv 0$ (equazione di Cauchy-Riemann).
+      Si noti che la condizione è $\dfrac{\partial f}{\partial \bar{z}} \equiv 0$, da cui si ricava $\dfrac{\partial f}{\partial z}=f'$;
+      \item $f$ è continua e per ogni rettangolo (o disco) chiuso $D \subseteq \Omega$ si ha $\displaystyle \int_{\partial D} f\diff z=0$ (teorema di Cauchy-Goursat+Morera).
+  \end{nlist}
+\end{defn}
+
+La seguente proposizione è anch'essa un risultato che dovrebbe essere noto agli studenti che seguono il corso.
+
+\begin{prop}
+  Sia $\{c_n\} \in \mathbb{C}$. Allora:
+  \begin{nlist}
+    \item esiste $R \in [0, +\infty]$ t.c. $\displaystyle \sum_{n=0}^{+\infty} c_nz^n$ converge per $|z|<R$ e diverge per $|z|>R$. $R$ è detto \textit{raggio di convergenza}. La convergenza +è uniforme su $\Delta_r=\{|z| \le r\}, r<R$. $\displaystyle \limsup_{n \longrightarrow +\infty} |c_n|^{1/n}=\frac{1}{R}$;
+    \item $\displaystyle \sum_{n=0}^{+\infty} nc_nz^{n-1}$ ha lo stesso raggio di convergenza;
+    \item se $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$ allora $f'(z)=\sum_{n=0}^{+\infty} nc_n(z-a)^{n-1}$;
+    \item se $f \in \mathcal{O}(\Omega)$ e $a \in \Omega$, allora $\displaystyle f(z)=\sum_{n=0}^{+\infty} \frac{1}{n!}f^{(n)}(a)(z-a)^n$. Questa formula è valida nel più grande disco aperto centrato in $a$ e contenuto in $\Omega$, cioè di raggio minore o uguale di $d(a, \partial \Omega)$.
+  \end{nlist}
+\end{prop}
+
+\begin{thm}
+  (Formula di Cauchy) Sia $\Omega$ aperto, $f \in \mathcal{O}(\Omega), D \subseteq \Omega$ disco/rettangolo chiuso. Per ogni $\displaystyle a \in D, f(a)=\frac{1}{2\pi i} \int_{\partial D} \frac{\zeta}{\zeta-a} \diff\zeta$.
+  Si ha che $\displaystyle f^{(n)}(a)=\frac{n!}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{(\zeta-a)^{n+1}}\diff \zeta$.
+\end{thm}
+
+\begin{cor}
+  (Disuguaglianze di Cauchy) $f \in \mathcal{O}(\Omega), D=D(a, r) \subseteq \Omega$ disco di centro $a \in \Omega$ e raggio $r>0$. Sia $\displaystyle M=\max_{\zeta \in \partial D} |f(\zeta)|$. Allora per ogni $n \ge 1, |f^{(n)}(a)| \le \dfrac{n!}{r^n}M$.
+\end{cor}
+
+\begin{cor} \label{liou}
+  (Teorema di Liouville) Sia $f \in \mathcal{O}(\mathbb{C})$ limitata. Allora $f$ è costante.
+\end{cor}
+
+\begin{proof}
+  Le disuguaglianze di Cauchy danno, per ogni $r>0$, $|f'(a)| \le \dfrac{M}{r}$ dove $\displaystyle M=\sup_{z \in \mathbb{C}} |f(z)|<+\infty \implies
+  f' \equiv 0$.
+\end{proof}
+
+\begin{thm}
+  (Principio di identità o del prolungamento analitico) $\Omega \subseteq \mathbb{C}$ dominio, $f, g \in \mathcal{O}(\Omega)$. Se $\{z \in \Omega | f(z)=g(z)\}$ ha un punto di accumulazione in $\Omega$, allora $f \equiv g$.
+\end{thm}
+
+\begin{cor} \label{olo_discr}
+  $\Omega \subseteq \mathbb{C}$ dominio, $f \in \mathcal{O}(\Omega)$ non identicamente nulla, allora $\{z \in \Omega | f(z)=0\}$ è discreto in $\Omega$.
+\end{cor}
+
+\begin{thm} \label{pr_max}
+  (Principio del massimo) $\Omega \subseteq \mathbb{C}$ dominio, $f \in \mathcal{O}(\Omega)$. Allora:
+  \begin{nlist}
+    \item se $U$ è aperto e $U \subset \subset \Omega$ (si legge "$U$ relativamente compatto in $\Omega$" e si intende $\overline{U} \subset \Omega$ e $\overline{U}$ compatto) allora $\displaystyle \sup_{z \in U} |f(z)| \le \sup_{z \in \partial D} |f(z)|$. Inoltre, se $|f|$ ha un massimo locale in $U$, allora $f$ è costante in $\Omega$;
+    \item la stessa affermazione vale per $\mathfrak{Re} f$ e $\mathfrak{Im} f$;
+    \item se $\Omega$ è limitato poniamo $\displaystyle M=\sup_{x \in \partial D} \limsup_{z \longrightarrow x} |f(z)| \in [0, +\infty]$. Allora per ogni $z \in \Omega$ $|f(z)| \le M$ con uguaglianza in un punto se e solo se $f$ è costante.
+  \end{nlist}
+\end{thm}
+
+\begin{ex}
+  Controesempio per vedere che serve $\Omega$ limitato per il punto (iii) del teorema \ref{pr_max}: $\Omega=\{z \in \mathbb{C} | \mathfrak{Re} z>0\}, f(z)=e^z$. $f \in \mathcal{O}(\mathbb{C}) \subset \mathcal{O}(\Omega)$.
+  $z \in \partial\Omega \implies z=iy \implies |f(iy)|=|e^{iy}|=1$, ma $f$ è illimitata in $\Omega$. Per correggere questa cosa si aggiunge il punto all'infinito.
+\end{ex}
+
+\begin{thm}
+  (Applicazione aperta) $f \in \mathcal{O}(\Omega)$ non costante $\implies$ $f$ è un'applicazione aperta.
+\end{thm}
+
+Siano $X, Y$ spazi topologici e indichiamo con $C^0(X, Y)$ le funzioni continue da $X$ in $Y$.
+
+La \textit{topologia della convergenza puntuale} è la restrizione a $C^0(X, Y) \subset Y^X=\{f:X \longrightarrow Y\}$ della topologia prodotto. Una prebase è data da $\mathcal{F}(x, U)=\{f \in C^0(X, Y) |f(x) \in U\}$ dove $x \in X$ e $U \subseteq Y$ è un aperto.
+
+\begin{exc}
+  $f_n \longrightarrow f \in C^0(X, Y)$ per questa topologia se e solo se $f_n(x) \longrightarrow f(x)$ per ogni $x \in X$.
+\end{exc}
+
+La \textit{topologia compatta-aperta} ha invece come prebase $\mathcal{F}(K, U)= \\ =\{f \in C^0(X, Y) | f(K) \subseteq U\}$ dove $U$ è preso come sopra e $K \subseteq X$ è un compatto.
+
+\begin{prop}
+  \begin{nlist}
+    \item La topologia compatta-aperta è più fine della topologia della convergenza puntuale;
+    \item $Y$ Hausdorff $\implies$ topologia compatta aperta Hausdorff.
+  \end{nlist}
+\end{prop}
+
+\begin{proof}
+  \begin{nlist}
+    \item Ovvia (il singoletto è un compatto).
+    \item Prendiamo $f \not\equiv g$ continue, allora esiste $x_0 \in X$ t.c. $f(x_0) \not= g(x_0)$, per cui, dato che $Y$ è Hausdorff,
+    esistono $U, V \subset Y$ aperti disgiunti con $f(x_0) \in U, g(x_0) \in V \implies f \in \mathcal{F}(x_0, U), g \in \mathcal{F}(x_0, V), \mathcal{F}(x_0, U) \cap \mathcal{F}(x_0, V)=\emptyset$.
+  \end{nlist}
+\end{proof}
+
+\begin{thm}
+  (Ascoli-Arzelà) Siano $X, Y$ spazi metrici con $X$ localmente compatto, allora $\mathcal{F} \subseteq C^0(X, Y)$ è relativamente compatta rispetto alla topologia compatta-aperta se e solo se:
+  \begin{nlist}
+    \item per ogni $x \in X$ $\{f(x) | f \in \mathcal{F}\} \subset \subset Y$;
+    \item $\mathcal{F}$ è equicontinua.
+  \end{nlist}
+\end{thm}
+
+La topologia compatta-aperta viene detta anche topologia della \textit{convergenza uniforme sui compatti}: $\{f_n\} \subset C^0(X, \mathbb{R}^N)$. Se $K \subseteq X$ definiamo $\displaystyle \|f\|_K=\sup_{z \in K} \|f(z)\|$.
+$f_n \longrightarrow f$ uniformemente sui compatti se per ogni $K \subset \subset X$ compatto e per ogni $\epsilon>0$ esiste $n_0$ t.c. $n \ge n_0 \implies \|f_n-f\|_K<\epsilon$.
+
+\begin{exc}
+  $f_n \longrightarrow f$ uniformemente sui compatti se e solo se $f_n \longrightarrow f$ nella topologia compatta-aperta.
+\end{exc}
