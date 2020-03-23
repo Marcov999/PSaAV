@@ -1,1 +1,3 @@
+Aggiungere il problema dei coseni.
+
 Scrivere un README decente
