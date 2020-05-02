@@ -1,0 +1,13 @@
+\begin{prob}
+  Sia $x_n$ una successione che parte da $x_0$ intero e così definita: \\ $x_{n+1}=-2x_n+3$. È vero che essa contiene infiniti quadrati perfetti solo se $x_0=1$?
+\end{prob}
+
+\begin{sol}
+  Se l'affermazione fosse falsa credo che il metodo più ovvio di dimostrarla sarebbe con un controesempio, e visto che se ci fosse un controesempio semplice il problema sarebbe idiota non voglio perdere tempo a cercarlo, quindi punto su "l'affermazione è vera" (se poi c'è davvero un controesempio semplice avrò perso un sacco di tempo).
+
+  Bene, quand'è che $3-2a=m^2$? Dev'essre $a \equiv m^2 \pmod{3}$. Allora $a \equiv 0 \lor 1 \pmod{3}$. In generale non ci dice nulla... no, falso: ci dice che zero non può essere percHè dopo non ci sarebbe un quadrato... no, controfalso: dice infiniti, ma non tutti, né definitivamente (ce ne sono infiniti=frequentemente). Ok, modulo $3$ è quasi inutile, modulo $2$ non ci provo nemmeno.
+
+  Facciamo qualche manipolazione: $2a+1=4-m^2=(2+m)(2-m)$. Non mi dice niente. Mi viene da pensare alla grandezza e al segno dei termini della successione, però non so. Beh, in effetti se $x_n>0$ allora $x_{n+1}$ è un quadrato se e solo se $x_n=1$ e allora dev'essere tutto $1$. Sarei tentato di provare una cosa tipo $x_{n-1}=\dfrac{3-x_n}{2}$. Oppure mi accorgo che sono un coglione e che c'è una formula generica in funzione di $x_0$ da poter studiare... faccio i conti e vi faccio sapere.
+
+  Eccomi: $x_n=3\cdot((-2)^n-1)+(-2)^nx_0$. Ok, adesso modulo $2^n$ forse si può dire qualcosa, vediamo. Uh, forse non riesco più a fare i conti bene... $x_n=1-(-2)^n+(-2)^nx_0$, adesso garantisco che è quella giusta. Se $x_0$ è negativo $x_1$ è positivo, quindi WLOG $x_0>0$ e se $x_0=1$ è sempre $1$, se $x_0 \ge 2$ allora $x_n$ è negativo per i dispari, quindi dobbiamo guardare agli $n$ pari: $n=2m$, allora vogliamo studiare $1-4^m+4^mx_0$. Ho una certa voglia di tornare ai moduli, ma non sono sicuro che funzionino. Adesso devo andare, riprenderò poi.
+\end{sol}
