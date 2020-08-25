@@ -5,11 +5,15 @@
 \begin{sol}
   Geometria, la mia vecchia nemica. E non un triangolo, nemmeno un quadrato, ma addirittura un pentagono! Devo ammetterlo, quella tesi mi fa venire voglia di baricentriche, ma su quale triangolo? Ogni cosa a suo tempo: prima un bel (si fa per dire...) disegno. Se riesco, vi metto quello fatto a mano. \\
 
-  Inserire disegno 1 \\
+  \begin{center}
+    \includegraphics{secs/G1/G1-1.pdf}
+  \end{center}
 
   E adesso, la mia parte preferita: fissarlo finché non mi viene in mente qualche strano elemento geometrico da aggiungere che potrebbe funzionare. Mi è stato detto che ci sono diversi modi per approcciarlo, perciò intanto penso: quale triangolo userei per le baricentriche? Me ne è venuto in mente uno complicato, con un vertice in $E$ e lati $EA, ED, BC$ (quindi prolungando), oppure $EBC$ stesso, ma non mi piacciono i conti che sembrano venir fuori. Anche se quella di prolungare non è una cattiva idea. Devo stare attento, il disegno è (come sempre) viziato: sembrano vere cose che in generale non lo sono, tipo $EA=ED$. Vediamo se riesco a farne uno più generico... Ok, è di nuovo viziato, ma in modo totalmente diverso (ci sono un po' di angoli retti), inoltre sembra essere più accurato ma allo stesso tempo sembra che la tesi sia falsa. Buffo. Ok, no, ricontrollando ho fatto confusione con l'ultima condizione sugli angoli. Guardate il disegno, capirete perché ci sto perdendo tanto tempo - è complicato! Ora va un po' meglio. Ok, vediamo.
 
-  Inserire disegno 2
+  \begin{center}
+    \includegraphics[width=1\textwidth]{secs/G1/G1-2.pdf}
+  \end{center}
 
   Ci sono un po' di triangoli isosceli fatti usando i segmenti $AB, BC, CD$, il che vuol dire angoli uguali, e a noi piacciono gli angoli, ma come gestisco una concorrenza? E ora che ci penso, l'ipotesi sugli angoli farebbe schifo in baricentriche o in qualunque contesto che non sia la geometria sintetica, perciò è da buttare. Oh, giusto! Un classico per gestire le concorrenze è pensarle al contrario: fissiamo due rette, prendiamo la retta che passa per il punto di intersezione e un altro punto obbligato e verifichiamo che coincida con quella che ci manca. In questo caso, procederò così: chiamo $F=AC \cap BD$ e voglio dimostrare che $EF \perp BC$. Leviamo quell'ipotesi dal disegno e mettiamoci $F$. Ah-ah! Ho visto una cosa. Vale la pena tentare. In blu nel disegno trovate le cose che ho aggiunto d'ora in avanti. Da $AB=BC$ otteniamo $\widehat{BAC}=\widehat{BCA}$ che combinato all'ipotesi sugli angoli in $A$ e in $C$ ci dà $\widehat{EAC}=\widehat{DCA}$, perciò se chiamo $G=AE \cap DC$ otterrò che $AGC$ è isoscele di base $AC$. Analogamente, chiamando $H=AB \cap ED$, $BHD$ sarà isoscele di base $BD$. Chissa se queste cose torneranno utili. \\
 
@@ -23,7 +27,9 @@
   Ok, sto seriamente pensando di ritornare all'ipotesi di perpendicolarità, ma voglio comunque sfruttare l'idea di "far fittare la terza retta". Prendo $EF$ e $AC$, quella che deve tornare adesso è $BD$. Intanto abbiamo il quadrilatero $BIFJ$ ciclico (angoli in $I$ e $J$ retti), ma c'è anche un bel po' di angle chasing da fare. Di nuovo a fissare il disegno, stavolta con intenzioni serie. Ok, vediamo: Sappiamo che $\widehat{EDC}=y$ e $\widehat{DCF}=x-(\pi-y)/2$. Sotto queste ipotesi e sfruttando il quadrilatero ciclico, $\widehat{EFC}=\widehat{IFJ}=\pi-\widehat{IBJ}=\pi-y/2$, dunque $\widehat{FED}=2\pi-y-x+(\pi-y)/2-\pi+y/2=\frac{3}{2}\pi-x-y$.
   Non mi piace. O forse sì? Per simmetria dovrebbe essere uguale all'angolo $\widehat{AED}$, perciò oltre che "altezza" quella retta è anche bisettrice... No, sto correndo troppo: stiamo considerando solo il segmento $AC$, altrimenti è come assumere la tesi. Forse ci sono. Ricopio il disegno vuoto per schiarirmi le idee.
 
-  Inserire disegno 3
+  \begin{center}
+    \includegraphics[width=0.54\textwidth]{secs/G1/G1-3.pdf}
+  \end{center}
 
   Siano $P=EA \cap BC$ e $Q=ED \cap BC$. È banale vedere che $EPQ$ è isoscele di base $PQ$, perciò la retta che abbiamo tracciato è sia altezza che bisettrice. Riprendiamo i punti $F$, $G$, $I$ e $J$. Adesso è ovvio che il calcolo di prima era giusto, ma in realtà era ovvio anche prima che fosse davvero la bisettrice. Ehi, è vero, ci sono molti modi per approcciarlo! (E io faccio davvero schifo in sintetica)
 
