@@ -1,19 +1,8 @@
-AUXX = $(addprefix build/, main.toc main.aux)
 SECS := $(wildcard secs/*.tex)
 
 all: PSaAV.pdf
 
-PSaAV.pdf: $(AUXX) main.tex $(SECS) mstyle.sty
-	cp $(AUXX) .
-	pdflatex main.tex
-	pdflatex main.tex
-	mv *.toc build
-	mv *.aux build
-	mv *.log build
-	mv *.out build
-	mv main.pdf PSaAV.pdf
-
-$(AUXX): main.tex $(SECS)
+PSaAV.pdf: main.tex $(SECS) mstyle.sty
 	pdflatex main.tex
 	pdflatex main.tex
 	mkdir -p build
@@ -21,8 +10,5 @@ $(AUXX): main.tex $(SECS)
 	mv *.aux build
 	mv *.log build
 	mv *.out build
-	rm main.pdf
-
-.PHONY: clean
-clean:
+	mv main.pdf PSaAV.pdf
 	rm -rf build
